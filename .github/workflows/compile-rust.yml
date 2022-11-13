@@ -6,13 +6,10 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
-
+  Compile-with-prev-Rust:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - name: Use Rust 1.64
+      run: rustup override set 1.64
     - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      run: cargo build
