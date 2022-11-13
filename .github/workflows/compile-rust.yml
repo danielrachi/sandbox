@@ -13,7 +13,5 @@ jobs:
     - name: Use Rust 1.64
       run: rustup override set 1.64
     - name: Build
-      run: |
-        cd $GITHUB_WORKSPACE
-        cargo build
+      run: cargo build
 
