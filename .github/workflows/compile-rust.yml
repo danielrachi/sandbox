@@ -9,7 +9,11 @@ jobs:
   Compile-with-prev-Rust:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: Use Rust 1.64
+      run: rustup override set 1.64
+    - name: Build
       run: |
-        rustup override set 1.64
+        cd $GITHUB_WORKSPACE
         cargo build
+
