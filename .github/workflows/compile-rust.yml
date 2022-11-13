@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Use Rust 1.64
-      run: rustup override set 1.64
-    - name: Build
-      run: cargo build
+      run: |
+        rustup override set 1.64
+        cargo build
